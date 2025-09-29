@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interrupciones y ladrones de tiempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Barra de progreso -->
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <!-- Indicador de sección -->
+        <div class="section-indicator">
+            <span id="current-section">1</span> de <span id="total-sections">7</span>
+        </div>
+
+        <!-- Sección 1: Introducción -->
+        <section class="slide active" id="slide-1">
+            <div class="slide-content">
+                <h1 class="main-title">Interrupciones y ladrones de tiempo</h1>
+                <div class="intro-image">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7108e57c-3b5f-480d-9ea0-e92206ea785b.png" alt="Ladrón de tiempo con antifaz robando un reloj">
+                </div>
+                <div class="interactive-question">
+                    <h2>Piensa rápido...</h2>
+                    <button class="reveal-btn" onclick="revealAnswer()">¿Cuántas veces te han interrumpido hoy?</button>
+                    <div class="answer hidden" id="intro-answer">
+                        <p>¿Cuánto tiempo has perdido en tareas secundarias, que no eran interesantes o que no aportaban mucho a la organización o a ti?</p>
+                        <div class="highlight-box">
+                            <p><strong>Te presento a los ladrones de tiempo y sus compinches, las interrupciones.</strong></p>
+                            <p>Estos SON expertos en robarnos minutos... y paciencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: ¿Qué son los ladrones de tiempo? -->
+        <section class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2>¿Qué son los ladrones de tiempo?</h2>
+                <div class="definition-box">
+                    <p>Los ladrones de tiempo son esas actividades, personas o hábitos que nos hacen perder la concentración y retrasan nuestro trabajo.</p>
+                    <p class="humor-text">"No llevan antifaz ni rayas, pero te dejan sin tiempo y con cara de '¿Dónde se ha ido mi día?'"</p>
+                </div>
+                
+                <div class="examples-grid">
+                    <h3>Ejemplos de ladrones de tiempo:</h3>
+                    <div class="examples-list">
+                        <div class="example-item" onclick="highlightExample(this)">📱 Interrupciones constantes</div>
+                        <div class="example-item" onclick="highlightExample(this)">🏢 Reuniones improductivas</div>
+                        <div class="example-item" onclick="highlightExample(this)">🎭 Improvisación</div>
+                        <div class="example-item" onclick="highlightExample(this)">🔄 Multitarea</div>
+                        <div class="example-item" onclick="highlightExample(this)">📧 Correos eternos</div>
+                        <div class="example-item" onclick="highlightExample(this)">📞 Teléfono sin fin</div>
+                        <div class="example-item" onclick="highlightExample(this)">📲 Redes sociales</div>
+                        <div class="example-item" onclick="highlightExample(this)">⏰ Procrastinación</div>
+                    </div>
+                </div>
+
+                <div class="key-message">
+                    <p><strong>En realidad, el problema o el foco debe estar en LA INTERRUPCIÓN.</strong></p>
+                    <p>Si te proteges contra las interrupciones… no dejarás que entren muchos ladrones de tiempo a tu vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Interrupciones: El ladrón más descarado -->
+        <section class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2>Interrupciones: El ladrón más descarado</h2>
+                
+                <div class="scenario-box">
+                    <p>Imagina que estás a punto de cerrar ese informe tan importante que debes entregar, y de repente escuchas:</p>
+                    <div class="dramatic-text">"¿Tienes un minuto?"</div>
+                    <p class="humor-text">...y ese minuto… ya sabes, no dura 60 segundos... dura media mañana.</p>
+                </div>
+
+                <div class="science-section">
+                    <h3>Impactos fisiológicos de las interrupciones:</h3>
+                    <div class="stress-hormones">
+                        <div class="hormone">💊 Adrenalina</div>
+                        <div class="hormone">💊 Noradrenalina</div>
+                        <div class="hormone">💊 Cortisol</div>
+                    </div>
+                    <div class="study-result">
+                        <p><strong>Estudio de la Escuela Politécnica Federal de Zúrich:</strong></p>
+                        <p>Los participantes liberaban casi el <span class="highlight">doble de cortisol</span> tras interrupciones constantes.</p>
+                        <p class="metaphor">Es como ir llenando ese vaso de agua, que es tu depósito del estrés, sin que te des cuenta.</p>
+                    </div>
+                </div>
+
+                <div class="concentration-recovery">
+                    <h3>Recuperar Concentración</h3>
+                    <div class="stat-box">
+                        <div class="big-number">23-25</div>
+                        <div class="stat-label">minutos para recuperar la concentración plena</div>
+                        <div class="source">(Gloria Mark - Universidad de California)</div>
+                    </div>
+                </div>
+
+                <div class="calculation-demo">
+                    <h3>Calculadora de tiempo perdido</h3>
+                    <div class="calc-input">
+                        <label>Interrupciones por día:</label>
+                        <input type="number" id="interruptions-input" value="10" min="1" max="50">
+                        <button onclick="calculateLostTime()">Calcular</button>
+                    </div>
+                    <div class="calc-result" id="calc-result">
+                        <p>Con 10 interrupciones diarias pierdes más de <span class="highlight">4 horas</span> en volver a retomar la tarea con concentración.</p>
+                        <p class="dramatic-text">¿Entonces CUÁNDO TRABAJAS? 🤷‍♀️</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Ladrones en clave de humor -->
+        <section class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2>Ladrones de tiempo en clave de humor</h2>
+                
+                <div class="humor-section">
+                    <p>En el mundo real, los ladrones de tiempo no usan pasamontañas, pero sí WhatsApp, agendas compartidas, y ese famoso:</p>
+                    <div class="quote-box">"¿puedes revisar esto rápido?"</div>
+                </div>
+
+                <div class="funny-responses">
+                    <h3>Respuestas que dan ganas de decir:</h3>
+                    <div class="response-item" onclick="animateResponse(this)">
+                        <div class="question">"¿Tienes un segundo?"</div>
+                        <div class="answer">"YA ha pasado un segundo"</div>
+                    </div>
+                    <div class="response-item" onclick="animateResponse(this)">
+                        <div class="question">"¿Tienes un segundo?"</div>
+                        <div class="answer">"Lo tenía, ya no lo tengo"</div>
+                    </div>
+                </div>
+
+                <div class="absurd-meeting">
+                    <p class="humor-text">Mi favorita: <strong>"Reunión para decidir cuándo será la próxima reunión"</strong> 🤦‍♀️</p>
+                </div>
+
+                <div class="comic-section">
+                    <h3>La realidad del trabajador moderno:</h3>
+                    <div class="office-worker-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/61fc40cb-6c4d-4726-b756-ab01fecd790a.png" alt="Trabajador abrumado por interrupciones">
+                    </div>
+                </div>
+
+                <div class="multitask-myth">
+                    <h3>El gran engaño de la multitarea</h3>
+                    <div class="myth-box">
+                        <p><strong>NO PUEDES HACER TODO A LA VEZ.</strong></p>
+                        <p>Los hombres ni siquiera dos a la vez.</p>
+                        <p>Si tu atención está en una cosa, la otra "NO VA A SALIR BIEN".</p>
+                        <p class="metaphor">Es como querer ser 'pulpo', y acabar con tentáculos enredados en todo menos lo esencial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Identificar ladrones -->
+        <section class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2>Cómo identificar tus ladrones de tiempo</h2>
+                
+                <div class="identification-intro">
+                    <p>El primer paso para combatirlos: <strong>reconocerlos</strong>.</p>
+                    <p>¿Qué te roba más tiempo cada día?</p>
+                </div>
+
+                <div class="time-audit">
+                    <h3>Haz tu lista personal</h3>
+                    <div class="audit-form">
+                        <div class="audit-item">
+                            <label>Interrupciones (minutos/día):</label>
+                            <input type="number" id="interruptions-time" min="0" placeholder="ej: 120">
+                        </div>
+                        <div class="audit-item">
+                            <label>Notificaciones (minutos/día):</label>
+                            <input type="number" id="notifications-time" min="0" placeholder="ej: 45">
+                        </div>
+                        <div class="audit-item">
+                            <label>Reuniones improductivas (minutos/día):</label>
+                            <input type="number" id="meetings-time" min="0" placeholder="ej: 90">
+                        </div>
+                        <div class="audit-item">
+                            <label>Redes sociales (minutos/día):</label>
+                            <input type="number" id="social-time" min="0" placeholder="ej: 60">
+                        </div>
+                        <div class="audit-item">
+                            <label>Correos innecesarios (minutos/día):</label>
+                            <input type="number" id="email-time" min="0" placeholder="ej: 75">
+                        </div>
+                        
+                        <button class="audit-btn" onclick="calculateTotalWaste()">Calcular tiempo perdido</button>
+                        
+                        <div class="audit-result hidden" id="audit-result">
+                            <div class="total-waste">
+                                <div class="waste-number" id="total-waste">0</div>
+                                <div class="waste-label">minutos perdidos al día</div>
+                            </div>
+                            <div class="waste-percentage">
+                                <span id="waste-percent">0</span>% de tu día laboral
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 6: Estrategias -->
+        <section class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2>Estrategias para derrotarlos</h2>
+                
+                <div class="strategies-container">
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>🗓️ Time-blocking</h3>
+                        <p class="strategy-brief">Bloques de tiempo sin interrupciones</p>
+                        <div class="strategy-detail hidden">
+                            <p>Pon tus <strong>'horas blindadas'</strong> y compártelo con tu equipo.</p>
+                            <p>CERO, he dicho <strong>CERO</strong> interrupciones.</p>
+                            <p>PROGRAMA UNA REUNIÓN CONTIGO MISMO. Utiliza la táctica del TIME-BLOCKING con tu AGENDA.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>📧 Gestión del correo</h3>
+                        <p class="strategy-brief">Revisa el correo en momentos específicos</p>
+                        <div class="strategy-detail hidden">
+                            <p>Notificaciones del correo <strong>apagadas directamente</strong> y correo CERRADO.</p>
+                            <p>Revisa tu correo SOLO EN HORAS PACTADAS (<strong>2-3 veces al día máximo</strong>).</p>
+                            <p>Yo lo leo 1 vez al día, a partir de las 12.00. No quiero que el correo me distraiga de lo verdaderamente importante.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>📱 Control del teléfono</h3>
+                        <p class="strategy-brief">Silencio total y fuera del alcance</p>
+                        <div class="strategy-detail hidden">
+                            <p>O pones el teléfono en silencio, o <strong>TE VAN A INTERRUMPIR</strong>.</p>
+                            <p>No en modo vibración, OJO... <strong>EN SILENCIO</strong>.</p>
+                            <p>Dejarlo lejos de tu alcance y en un lugar no visible de tu espacio de trabajo.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>🎧 Auriculares mágicos</h3>
+                        <p class="strategy-brief">La señal universal de "no molestar"</p>
+                        <div class="strategy-detail hidden">
+                            <p>Utiliza los auriculares para mandar el mensaje <strong>'zona de concentración'</strong>.</p>
+                            <p>Cuando tienes los auriculares puestos, el mensaje es "NO TE VOY A ESCUCHAR porque estoy escuchando otra cosa".</p>
+                            <p>Usa RUIDO BLANCO (ej: ruido de lluvia) en entornos ruidosos.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>🤝 Pactos con el equipo</h3>
+                        <p class="strategy-brief">Señales claras de disponibilidad</p>
+                        <div class="strategy-detail hidden">
+                            <p>Coloca señales o pacta con tu equipo las posibles interrupciones.</p>
+                            <p>Puerta cerrada: NI ENTRES. Puerta entreabierta: NO ME ENTRETENGAS MUCHO. Puerta abierta: PUEDES PASAR.</p>
+                            <p>Planea descansos para estar disponible para resolver dudas.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card" onclick="toggleStrategy(this)">
+                        <h3>❌ Decir NO</h3>
+                        <p class="strategy-brief">El arte de posponer lo no urgente</p>
+                        <div class="strategy-detail hidden">
+                            <p>Aprende a decir 'NO' o a posponer lo que no es urgente.</p>
+                            <p>Frase mágica: <strong>"NO AHORA, pero quizás SÍ LUEGO"</strong>.</p>
+                            <p>Responder rápidamente con un SÍ puede ser un NO para esa tarea importante que querías hacer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 7: Cierre inspirador -->
+        <section class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2>Tu tiempo es tu recurso más valioso</h2>
+                
+                <div class="closing-message">
+                    <div class="inspiration-box">
+                        <p>Los ladrones seguirán al acecho, pero puedes protegerte con <strong>planificación</strong>, <strong>comunicación</strong> y, sobre todo, siendo consciente de a qué le dedicas tus minutos.</p>
+                    </div>
+
+                    <div class="call-to-action">
+                        <h3>¿Listo para desenmascarar a tus ladrones de tiempo?</h3>
+                        <p>Tu día solo tiene <span class="highlight">1440 minutos</span> y mereces aprovecharlos.</p>
+                    </div>
+
+                    <div class="bunker-concept">
+                        <p><strong>CREA UN BUNKER PARA TU TRABAJO</strong>... pero sal de vez en cuando para avisar que estás disponible.</p>
+                    </div>
+
+                    <div class="final-challenge">
+                        <h3>🎯 Desafío final</h3>
+                        <p><strong>PLANIFICA UN TIEMPO PARA TI. CONTIGO</strong></p>
+                        <p>¿Te animas a hacerlo ahora mismo?</p>
+                        
+                        <div class="challenge-action">
+                            <button class="challenge-btn" onclick="schedulePersonalTime()">
+                                Bloquear 1 hora mañana para mí
+                            </button>
+                            <div class="challenge-result hidden" id="challenge-result">
+                                <p>¡Perfecto! Has tomado el primer paso.</p>
+                                <p>Recuerda: esa hora es TUYA, sin interrupciones.</p>
+                                <p>Tal vez para esa TMI (Tarea Más Importante) que sabes que tienes que hacer pero nunca arrancas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controles de navegación -->
+        <div class="navigation-controls">
+            <button class="nav-btn" id="prev-btn" onclick="previousSlide()">← Anterior</button>
+            <button class="nav-btn" id="next-btn" onclick="nextSlide()">Siguiente →</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
